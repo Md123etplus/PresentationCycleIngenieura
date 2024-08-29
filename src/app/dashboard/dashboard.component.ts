@@ -3,7 +3,7 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {MatDivider} from "@angular/material/divider";
 
 @Component({
-  selector: 'app-professeur-template',
+  selector: 'app-dashboard',
   standalone: true,
     imports: [
         MatCard,
@@ -12,9 +12,9 @@ import {MatDivider} from "@angular/material/divider";
         MatCardTitle,
         MatDivider
     ],
-  templateUrl: './professeur-template.component.html',
-  styleUrl: './professeur-template.component.css'
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css'
 })
-export class ProfesseurTemplateComponent {
+export class DashboardComponent {
 
 }
