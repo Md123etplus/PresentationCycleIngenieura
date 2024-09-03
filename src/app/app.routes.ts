@@ -9,15 +9,22 @@ import {LoginComponent} from "./login/login.component";
 import {ProfesseurTemplateComponent} from "./professeur-template/professeur-template.component";
 import {LoadStudentsComponent} from "./load-students/load-students.component";
 import {LoadPaymentsComponent} from "./load-payments/load-payments.component";
+import {AdminComponent} from "./admin/admin.component";
+import {authGuard} from "./guards/auth.guard";
 
 export const routes: Routes = [
-  {path:"home",component:HomeComponent},
-  {path:"profile",component:ProfileComponent},
-  {path:"dashboard",component:DashboardComponent},
-  {path:"student",component:EtudiantTemplateComponent},
-  {path:"payments",component:PaymentsComponent},
+  {path:"",component:LoginComponent},
   {path:"login",component:LoginComponent},
-  {path:"professor",component:ProfesseurTemplateComponent},
-  {path:"loadStudents",component:LoadStudentsComponent},
-  {path:"loadPayments",component:LoadPaymentsComponent},
+  {path:"admin",component:AdminComponent, children :[
+      {path:"home",component:HomeComponent},
+      {path:"profile",component:ProfileComponent},
+      {path:"dashboard",component:DashboardComponent},
+      {path:"student",component:EtudiantTemplateComponent},
+      {path:"payments",component:PaymentsComponent},
+
+      {path:"professor",component:ProfesseurTemplateComponent},
+      {path:"loadStudents",component:LoadStudentsComponent},
+      {path:"loadPayments",component:LoadPaymentsComponent},
+    ],canActivate: [authGuard]},
+
 ];

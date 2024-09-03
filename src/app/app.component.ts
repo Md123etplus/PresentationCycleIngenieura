@@ -5,10 +5,11 @@ import { EtudiantTemplateComponent } from './etudiant-template/etudiant-template
 import { ProfesseurTemplateComponent } from './professeur-template/professeur-template.component';
 import {HomeComponent} from "./home/home.component";
 import {AdminComponent} from "./admin/admin.component";
+import {LoginComponent} from "./login/login.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, EtudiantTemplateComponent, ProfesseurTemplateComponent, MatToolbarModule, HomeComponent, AdminComponent],
+  imports: [RouterOutlet, EtudiantTemplateComponent, ProfesseurTemplateComponent, MatToolbarModule, HomeComponent, AdminComponent, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

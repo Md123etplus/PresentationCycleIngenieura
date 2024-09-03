@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatDrawer, MatDrawerContainer, MatDrawerContent} from "@angular/material/sidenav";
 import {MatIcon} from "@angular/material/icon";
@@ -7,6 +7,8 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatToolbar} from "@angular/material/toolbar";
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {MatPaginator} from "@angular/material/paginator";
+import {AuthenticationService} from "../services/authentication.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-admin',
@@ -27,10 +29,19 @@ import {MatPaginator} from "@angular/material/paginator";
     MatMenuTrigger,
     RouterLink,
     MatPaginator,
+    NgIf,
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
+  constructor(public authService:AuthenticationService) {
+  }
+  ngOnInit(): void {
 
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }
