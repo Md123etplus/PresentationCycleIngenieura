@@ -6,6 +6,7 @@ import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatToolbar} from "@angular/material/toolbar";
 import {RouterLink, RouterOutlet} from "@angular/router";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-admin',
@@ -24,7 +25,8 @@ import {RouterLink, RouterOutlet} from "@angular/router";
     MatToolbar,
     RouterOutlet,
     MatMenuTrigger,
-    RouterLink
+    RouterLink,
+    MatPaginator,
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
